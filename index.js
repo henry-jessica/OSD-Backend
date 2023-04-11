@@ -17,7 +17,7 @@ const app=express();
 const port = process.env.PORT || 3000; 
 
 var corsOptions = {
-    origin: 'http://localhost:4200',
+    origin: '*',
     optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
   }
 
