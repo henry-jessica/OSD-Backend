@@ -17,7 +17,7 @@ const app=express();
 const port = process.env.PORT || 3000; 
 
 var corsOptions = {
-  origin: '*'
+  origin: 'https://openstack-production.up.railway.app'
 }
 
 
