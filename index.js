@@ -17,10 +17,8 @@ const app=express();
 const port = process.env.PORT || 3000; 
 
 var corsOptions = {
-    origin: 'https://openstack-production.up.railway.app',
-    optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
-  }
-
+  origin: '*'
+}
 
 
 // Passport Config
