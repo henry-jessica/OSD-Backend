@@ -59,10 +59,9 @@ const eventSchema = mongoose.Schema({
         type:Date, 
         required:true
     }, 
-    eventDateEnds:{
-        type:Date, 
-        required:true
-    }, 
+//     eventDateEnds:{
+//         type:Date, 
+//     }, 
     
     urlImg:{
         type:String, 
@@ -141,7 +140,7 @@ function ValidateEvent(event) {
         //  .required(),
 
 
-         eventDateEnds: Joi.date(),
+//          eventDateEnds: Joi.date(),
  
         //  salesEndDate: Joi.date()
         //   .greater(Joi.ref('salesStartDate'))
