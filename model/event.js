@@ -82,7 +82,7 @@ const eventSchema = mongoose.Schema({
    
    startsPrice:{
     type:Number, 
-    required:true
+//     required:true
    },
    refundpolicy:{
     type:String, 
@@ -113,7 +113,7 @@ function ValidateEvent(event) {
         Joi.required(), 
         eircode: Joi.string()
         .min(3).regex(/^[ACDEFHKNPRTVWXY]{1}[0-9]{1}[0-9W]{1}[\ \-]?[0-9ACDEFHKNPRTVWXY]{4}$/
-        ).required()
+        )
 
     })
 
@@ -122,7 +122,7 @@ function ValidateEvent(event) {
         .min(3)
         .required()
         .messages({'string.empty': "you must enter name"}),
-        contactNumber: Joi.string().min(6).regex(/^([+])?(\d+)$/).required(),
+        contactNumber: Joi.string().min(6).regex(/^([+])?(\d+)$/),
        
 
         // salesStartDate: Joi.date()
@@ -141,8 +141,7 @@ function ValidateEvent(event) {
         //  .required(),
 
 
-         eventDateEnds: Joi.date()
-         .required(),
+         eventDateEnds: Joi.date(),
  
         //  salesEndDate: Joi.date()
         //   .greater(Joi.ref('salesStartDate'))
@@ -152,8 +151,7 @@ function ValidateEvent(event) {
         category: Joi.string(),
 
         contact_email: Joi.string().email()
-        .email({ minDomainSegments: 2, tlds: { allow: ['com', 'net', 'ie'] } })
-        .required(),
+        .email({ minDomainSegments: 2, tlds: { allow: ['com', 'net', 'ie'] } }),
         
         address: addressJoiSchema,
     
