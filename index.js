@@ -1,8 +1,8 @@
 const express = require('express'); 
 const db = require('./database');
 const eventRoutes = require('./routes/events')
-const auth = require('./routes/auth');
-const users = require('./routes/users');
+// const auth = require('./routes/auth');
+// const users = require('./routes/users');
 require('dotenv').config();
 // note this required a .env file which is not in github
 
@@ -43,8 +43,8 @@ app.get('/', (req,res)=>{
 // .then(()=> console.log('Connected to MongoDb ATLAS'))
 // .catch((error => console.error(error))); 
 app.use('/api', cors(), (eventRoutes));
-app.use('/users', users);
-app.use('/auth', auth)
+// app.use('/users', users);
+// app.use('/auth', auth)
 
 
 app.use(cors(corsOptions));
